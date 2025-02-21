@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52DAEBDD2D683F47002D585B /* PoliceProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAEBDC2D683F47002D585B /* PoliceProApp.swift */; };
+		52DAEBDF2D683F47002D585B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAEBDE2D683F47002D585B /* ContentView.swift */; };
+		52DAEBE12D683F47002D585B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAEBE02D683F47002D585B /* Item.swift */; };
+		52DAEBE32D683F4C002D585B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52DAEBE22D683F4C002D585B /* Assets.xcassets */; };
+		52DAEBE62D683F4C002D585B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52DAEBE52D683F4C002D585B /* Preview Assets.xcassets */; };
+		52DAEBF02D683F4D002D585B /* PoliceProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAEBEF2D683F4D002D585B /* PoliceProTests.swift */; };
+		52DAEBFA2D683F4D002D585B /* PoliceProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAEBF92D683F4D002D585B /* PoliceProUITests.swift */; };
+		52DAEBFC2D683F4D002D585B /* PoliceProUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAEBFB2D683F4D002D585B /* PoliceProUITestsLaunchTests.swift */; };
+		52DAEC092D686227002D585B /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAEC082D686227002D585B /* ChatView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52DAEBEC2D683F4D002D585B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52DAEBD12D683F46002D585B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52DAEBD82D683F47002D585B;
+			remoteInfo = PolicePro;
+		};
+		52DAEBF62D683F4D002D585B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52DAEBD12D683F46002D585B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52DAEBD82D683F47002D585B;
+			remoteInfo = PolicePro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52DAEBD92D683F47002D585B /* PolicePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolicePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52DAEBDC2D683F47002D585B /* PoliceProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceProApp.swift; sourceTree = "<group>"; };
+		52DAEBDE2D683F47002D585B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		52DAEBE02D683F47002D585B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		52DAEBE22D683F4C002D585B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52DAEBE52D683F4C002D585B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		52DAEBEB2D683F4D002D585B /* PoliceProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoliceProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52DAEBEF2D683F4D002D585B /* PoliceProTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceProTests.swift; sourceTree = "<group>"; };
+		52DAEBF52D683F4D002D585B /* PoliceProUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoliceProUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52DAEBF92D683F4D002D585B /* PoliceProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceProUITests.swift; sourceTree = "<group>"; };
+		52DAEBFB2D683F4D002D585B /* PoliceProUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceProUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		52DAEC082D686227002D585B /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52DAEBD62D683F47002D585B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52DAEBE82D683F4D002D585B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52DAEBF22D683F4D002D585B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52DAEBD02D683F46002D585B = {
+			isa = PBXGroup;
+			children = (
+				52DAEBDB2D683F47002D585B /* PolicePro */,
+				52DAEBEE2D683F4D002D585B /* PoliceProTests */,
+				52DAEBF82D683F4D002D585B /* PoliceProUITests */,
+				52DAEBDA2D683F47002D585B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52DAEBDA2D683F47002D585B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52DAEBD92D683F47002D585B /* PolicePro.app */,
+				52DAEBEB2D683F4D002D585B /* PoliceProTests.xctest */,
+				52DAEBF52D683F4D002D585B /* PoliceProUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52DAEBDB2D683F47002D585B /* PolicePro */ = {
+			isa = PBXGroup;
+			children = (
+				52DAEBDC2D683F47002D585B /* PoliceProApp.swift */,
+				52DAEBDE2D683F47002D585B /* ContentView.swift */,
+				52DAEC082D686227002D585B /* ChatView.swift */,
+				52DAEBE02D683F47002D585B /* Item.swift */,
+				52DAEBE22D683F4C002D585B /* Assets.xcassets */,
+				52DAEBE42D683F4C002D585B /* Preview Content */,
+			);
+			path = PolicePro;
+			sourceTree = "<group>";
+		};
+		52DAEBE42D683F4C002D585B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				52DAEBE52D683F4C002D585B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52DAEBEE2D683F4D002D585B /* PoliceProTests */ = {
+			isa = PBXGroup;
+			children = (
+				52DAEBEF2D683F4D002D585B /* PoliceProTests.swift */,
+			);
+			path = PoliceProTests;
+			sourceTree = "<group>";
+		};
+		52DAEBF82D683F4D002D585B /* PoliceProUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52DAEBF92D683F4D002D585B /* PoliceProUITests.swift */,
+				52DAEBFB2D683F4D002D585B /* PoliceProUITestsLaunchTests.swift */,
+			);
+			path = PoliceProUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52DAEBD82D683F47002D585B /* PolicePro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52DAEBFF2D683F4D002D585B /* Build configuration list for PBXNativeTarget "PolicePro" */;
+			buildPhases = (
+				52DAEBD52D683F47002D585B /* Sources */,
+				52DAEBD62D683F47002D585B /* Frameworks */,
+				52DAEBD72D683F47002D585B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PolicePro;
+			productName = PolicePro;
+			productReference = 52DAEBD92D683F47002D585B /* PolicePro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52DAEBEA2D683F4D002D585B /* PoliceProTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52DAEC022D683F4D002D585B /* Build configuration list for PBXNativeTarget "PoliceProTests" */;
+			buildPhases = (
+				52DAEBE72D683F4D002D585B /* Sources */,
+				52DAEBE82D683F4D002D585B /* Frameworks */,
+				52DAEBE92D683F4D002D585B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52DAEBED2D683F4D002D585B /* PBXTargetDependency */,
+			);
+			name = PoliceProTests;
+			productName = PoliceProTests;
+			productReference = 52DAEBEB2D683F4D002D585B /* PoliceProTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52DAEBF42D683F4D002D585B /* PoliceProUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52DAEC052D683F4D002D585B /* Build configuration list for PBXNativeTarget "PoliceProUITests" */;
+			buildPhases = (
+				52DAEBF12D683F4D002D585B /* Sources */,
+				52DAEBF22D683F4D002D585B /* Frameworks */,
+				52DAEBF32D683F4D002D585B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52DAEBF72D683F4D002D585B /* PBXTargetDependency */,
+			);
+			name = PoliceProUITests;
+			productName = PoliceProUITests;
+			productReference = 52DAEBF52D683F4D002D585B /* PoliceProUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52DAEBD12D683F46002D585B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					52DAEBD82D683F47002D585B = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					52DAEBEA2D683F4D002D585B = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 52DAEBD82D683F47002D585B;
+					};
+					52DAEBF42D683F4D002D585B = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 52DAEBD82D683F47002D585B;
+					};
+				};
+			};
+			buildConfigurationList = 52DAEBD42D683F46002D585B /* Build configuration list for PBXProject "PolicePro" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52DAEBD02D683F46002D585B;
+			productRefGroup = 52DAEBDA2D683F47002D585B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52DAEBD82D683F47002D585B /* PolicePro */,
+				52DAEBEA2D683F4D002D585B /* PoliceProTests */,
+				52DAEBF42D683F4D002D585B /* PoliceProUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52DAEBD72D683F47002D585B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52DAEBE62D683F4C002D585B /* Preview Assets.xcassets in Resources */,
+				52DAEBE32D683F4C002D585B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52DAEBE92D683F4D002D585B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52DAEBF32D683F4D002D585B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52DAEBD52D683F47002D585B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52DAEC092D686227002D585B /* ChatView.swift in Sources */,
+				52DAEBDF2D683F47002D585B /* ContentView.swift in Sources */,
+				52DAEBE12D683F47002D585B /* Item.swift in Sources */,
+				52DAEBDD2D683F47002D585B /* PoliceProApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52DAEBE72D683F4D002D585B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52DAEBF02D683F4D002D585B /* PoliceProTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52DAEBF12D683F4D002D585B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52DAEBFC2D683F4D002D585B /* PoliceProUITestsLaunchTests.swift in Sources */,
+				52DAEBFA2D683F4D002D585B /* PoliceProUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52DAEBED2D683F4D002D585B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52DAEBD82D683F47002D585B /* PolicePro */;
+			targetProxy = 52DAEBEC2D683F4D002D585B /* PBXContainerItemProxy */;
+		};
+		52DAEBF72D683F4D002D585B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52DAEBD82D683F47002D585B /* PolicePro */;
+			targetProxy = 52DAEBF62D683F4D002D585B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		52DAEBFD2D683F4D002D585B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52DAEBFE2D683F4D002D585B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52DAEC002D683F4D002D585B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PolicePro/Preview Content\"";
+				DEVELOPMENT_TEAM = NNKQ5A4AA4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Irfan.PolicePro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52DAEC012D683F4D002D585B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PolicePro/Preview Content\"";
+				DEVELOPMENT_TEAM = NNKQ5A4AA4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Irfan.PolicePro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52DAEC032D683F4D002D585B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NNKQ5A4AA4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Irfan.PoliceProTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolicePro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PolicePro";
+			};
+			name = Debug;
+		};
+		52DAEC042D683F4D002D585B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NNKQ5A4AA4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Irfan.PoliceProTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolicePro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PolicePro";
+			};
+			name = Release;
+		};
+		52DAEC062D683F4D002D585B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NNKQ5A4AA4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Irfan.PoliceProUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PolicePro;
+			};
+			name = Debug;
+		};
+		52DAEC072D683F4D002D585B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NNKQ5A4AA4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Irfan.PoliceProUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PolicePro;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52DAEBD42D683F46002D585B /* Build configuration list for PBXProject "PolicePro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52DAEBFD2D683F4D002D585B /* Debug */,
+				52DAEBFE2D683F4D002D585B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52DAEBFF2D683F4D002D585B /* Build configuration list for PBXNativeTarget "PolicePro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52DAEC002D683F4D002D585B /* Debug */,
+				52DAEC012D683F4D002D585B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52DAEC022D683F4D002D585B /* Build configuration list for PBXNativeTarget "PoliceProTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52DAEC032D683F4D002D585B /* Debug */,
+				52DAEC042D683F4D002D585B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52DAEC052D683F4D002D585B /* Build configuration list for PBXNativeTarget "PoliceProUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52DAEC062D683F4D002D585B /* Debug */,
+				52DAEC072D683F4D002D585B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52DAEBD12D683F46002D585B /* Project object */;
+}
