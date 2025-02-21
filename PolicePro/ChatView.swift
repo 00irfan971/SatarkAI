@@ -161,7 +161,7 @@ class ChatViewModel: ObservableObject {
     }
     
     private func fetchResponse(for text: String) {
-        guard let url = URL(string: "https://satark-ai-f0xr.onrender.com/qa") else {
+        guard let url = URL(string: "https://satark-userside.onrender.com/user") else {
             self.errorMessage = "Invalid URL"
             self.isLoading = false
             return
@@ -220,6 +220,68 @@ extension String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
+import SwiftUI
+import Combine
+import Speech
+import AVFoundation
+
+// MARK: - Background Effects
+struct CyberGridBackground: View {
+    var body: some View {
+        ZStack {
+            // Animated gradient orbs
+            GeometryReader { geometry in
+                ZStack {
+                    Circle()
+                        .fill(Color.cyan.opacity(0.1))
+                        .frame(width: 300, height: 300)
+                        .blur(radius: 50)
+                        .offset(x: -100, y: -50)
+                        .animation(Animation.easeInOut(duration: 4).repeatForever(), value: UUID())
+                    
+                    Circle()
+                        .fill(Color.blue.opacity(0.1))
+                        .frame(width: 250, height: 250)
+                        .blur(radius: 50)
+                        .offset(x: geometry.size.width - 100, y: geometry.size.height/2)
+                        .animation(Animation.easeInOut(duration: 4).repeatForever().delay(2), value: UUID())
+                    
+                    Circle()
+                        .fill(Color.purple.opacity(0.1))
+                        .frame(width: 200, height: 200)
+                        .blur(radius: 50)
+                        .offset(x: geometry.size.width/2, y: geometry.size.height - 100)
+                        .animation(Animation.easeInOut(duration: 4).repeatForever().delay(1), value: UUID())
+                }
+            }
+            
+            // Cyber grid
+            GeometryReader { geometry in
+                Path { path in
+                    let horizontalSpacing: CGFloat = 40
+                    let verticalSpacing: CGFloat = 40
+                    
+                    // Vertical lines
+                    for x in stride(from: 0, through: geometry.size.width, by: horizontalSpacing) {
+                        path.move(to: CGPoint(x: x, y: 0))
+                        path.addLine(to: CGPoint(x: x, y: geometry.size.height))
+                    }
+                    
+                    // Horizontal lines
+                    for y in stride(from: 0, through: geometry.size.height, by: verticalSpacing) {
+                        path.move(to: CGPoint(x: 0, y: y))
+                        path.addLine(to: CGPoint(x: geometry.size.width, y: y))
+                    }
+                }
+                .stroke(Color.white.opacity(0.05), lineWidth: 1)
+            }
+        }
+    }
+}
+
+
+
+// MARK: - Voice Waveform
 struct VoiceWaveform: View {
     @Binding var isRecording: Bool
     
@@ -227,8 +289,12 @@ struct VoiceWaveform: View {
         HStack(spacing: 4) {
             ForEach(0..<5) { index in
                 RoundedRectangle(cornerRadius: 2)
-                    .fill(Color.blue)
-                    .frame(width: 4, height: 20)
+                    .fill(LinearGradient(
+                        gradient: Gradient(colors: [Color.cyan, Color.blue]),
+                        startPoint: .bottom,
+                        endPoint: .top
+                    ))
+                    .frame(width: 3, height: 20)
                     .scaleEffect(y: isRecording ? 1 + Double(index) * 0.2 : 0.3)
                     .animation(
                         Animation.easeInOut(duration: 0.5)
@@ -241,114 +307,202 @@ struct VoiceWaveform: View {
     }
 }
 
-struct ChatView: View {
-    @StateObject private var viewModel = ChatViewModel()
-    
-    var body: some View {
-        ZStack {
-            Color("Theme").ignoresSafeArea()
-            
-            VStack {
-                HStack {
-                    Image("Logo").resizable().frame(width: 50, height: 50)
-                    
-                    Text("Satark AI")
-                        .font(.system(size: 30, weight: .bold))
-                        .foregroundStyle(.white)
-                }
-                
-                Rectangle().frame(height: 2).foregroundColor(.gray)
-                
-                ScrollViewReader { scrollView in
-                    ScrollView {
-                        VStack(alignment: .leading, spacing: 10) {
-                            ForEach(viewModel.messages) { message in
-                                MessageBubble(message: message)
-                            }
-                            
-                            // Show loading indicator when waiting for response
-                            if viewModel.isLoading {
-                                HStack {
-                                    LoadingDots()
-                                        .padding()
-                                        .background(Color("Theme"))
-                                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                                    Spacer()
-                                }
-                                .padding(.trailing, 40)
-                            }
-                        }
-                        .padding()
-                    }
-                    .onChange(of: viewModel.messages.count) { _ in
-                        withAnimation {
-                            scrollView.scrollTo(viewModel.messages.last?.id, anchor: .bottom)
-                        }
-                    }
-                }
-                
-                HStack {
-                    if viewModel.isRecording {
-                        VoiceWaveform(isRecording: $viewModel.isRecording)
-                            .padding(.horizontal)
-                    } else {
-                        TextField("Type a message...", text: $viewModel.inputText)
-                            .padding(12)
-                            .foregroundColor(.black)
-                            .background(Color(.white))
-                            .cornerRadius(20)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.gray.opacity(0.4), lineWidth: 1)
-                            )
-                    }
-                    
-                    Button(action: {
-                        viewModel.toggleRecording()
-                    }) {
-                        Image(systemName: viewModel.isRecording ? "stop.circle.fill" : "mic.circle.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 32, height: 32)
-                            .foregroundColor(viewModel.isRecording ? .red : .blue)
-                    }
-                    .padding(.horizontal, 4)
-                    
-                    if !viewModel.isRecording {
-                        Button(action: viewModel.sendMessage) {
-                            Image(systemName: "paperplane.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                                .padding(12)
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .clipShape(Circle())
-                                .shadow(radius: 2)
-                        }
-                    }
-                }
-                .padding(.horizontal)
-            }
-        }
-    }
-}
-
+// MARK: - Message Bubble
 struct MessageBubble: View {
     let message: Message
     
     var body: some View {
         HStack {
             if message.isUser { Spacer() }
+            
             Text(message.text)
-                .padding()
-                .background(message.isUser ? Color.blue.opacity(0.8) : Color("Theme"))
-                .foregroundColor(message.isUser ? .white : .white)
-                .clipShape(RoundedRectangle(cornerRadius: 15))
-                .frame(maxWidth: message.isUser ? 250 : 300, alignment: message.isUser ? .trailing : .leading)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+                .background(
+                    Group {
+                        if message.isUser {
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color.cyan, Color.blue]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        } else {
+                            Color("Theme")
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(Color.cyan.opacity(0.3), lineWidth: 1)
+                                )
+                        }
+                    }
+                )
+                .foregroundColor(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .shadow(color: message.isUser ? Color.cyan.opacity(0.3) : Color.clear, radius: 8)
+                .frame(maxWidth: message.isUser ? 280 : 300, alignment: message.isUser ? .trailing : .leading)
+            
             if !message.isUser { Spacer() }
         }
         .padding(message.isUser ? .leading : .trailing, 40)
+    }
+}
+
+// MARK: - Chat View
+struct ChatView: View {
+    @StateObject private var viewModel = ChatViewModel()
+    @Namespace private var bottomID
+    
+    var body: some View {
+        ZStack {
+            // Background
+            Color("Theme").ignoresSafeArea()
+            CyberGridBackground()
+            
+            VStack(spacing: 0) {
+                // Header
+                VStack(spacing: 16) {
+                    HStack {
+                        Image("Logo")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color.cyan.opacity(0.3), lineWidth: 1)
+                            ).foregroundStyle(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.cyan, Color.blue]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                        
+                        Text("SATARK AI")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundStyle(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.cyan, Color.blue]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                    }
+                    
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(Color.cyan.opacity(0.3))
+                }
+                .padding()
+                .background(Color("Theme").opacity(0.98))
+                
+                // Messages
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        LazyVStack(spacing: 12) {
+                            ForEach(viewModel.messages) { message in
+                                MessageBubble(message: message)
+                            }
+                            
+                            if viewModel.isLoading {
+                                HStack {
+                                    LoadingDots()
+                                        .padding()
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .fill(Color("Theme"))
+                                                .overlay(
+                                                    RoundedRectangle(cornerRadius: 20)
+                                                        .stroke(Color.cyan.opacity(0.3), lineWidth: 1)
+                                                )
+                                        )
+                                    Spacer()
+                                }
+                                .padding(.trailing, 40)
+                            }
+                            
+                            Color.clear.frame(height: 1).id(bottomID)
+                        }
+                        .padding(.vertical)
+                    }
+                    .onChange(of: viewModel.messages.count) { _ in
+                        withAnimation {
+                            proxy.scrollTo(bottomID, anchor: .bottom)
+                        }
+                    }
+                }
+                
+                // Input Area
+                VStack {
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(Color.cyan.opacity(0.3))
+                    
+                    HStack(spacing: 12) {
+                        if viewModel.isRecording {
+                            VoiceWaveform(isRecording: $viewModel.isRecording)
+                                .padding(.horizontal)
+                                .frame(height: 44)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 22)
+                                        .fill(Color("Theme"))
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 22)
+                                                .stroke(Color.cyan.opacity(0.3), lineWidth: 1)
+                                        )
+                                )
+                        } else {
+                            TextField("Type a message...", text: $viewModel.inputText)
+                                .padding(.horizontal, 16)
+                                .frame(height: 44)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 22)
+                                        .fill(Color("Theme"))
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 22)
+                                                .stroke(Color.cyan.opacity(0.3), lineWidth: 1)
+                                        )
+                                )
+                                .foregroundColor(.white)
+                        }
+                        
+                        Button(action: { viewModel.toggleRecording() }) {
+                            Image(systemName: viewModel.isRecording ? "stop.circle.fill" : "mic.circle.fill")
+                                .font(.system(size: 24))
+                                .foregroundColor(viewModel.isRecording ? .red : .cyan)
+                                .frame(width: 44, height: 44)
+                                .background(
+                                    Circle()
+                                        .fill(Color("Theme"))
+                                        .overlay(
+                                            Circle()
+                                                .stroke(Color.cyan.opacity(0.3), lineWidth: 1)
+                                        )
+                                )
+                        }
+                        
+                        if !viewModel.isRecording {
+                            Button(action: viewModel.sendMessage) {
+                                Image(systemName: "paperplane.fill")
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.white)
+                                    .frame(width: 44, height: 44)
+                                    .background(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [Color.cyan, Color.blue]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
+                                    .clipShape(Circle())
+                                    .shadow(color: Color.cyan.opacity(0.3), radius: 8)
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, 8)
+                }
+                .background(Color("Theme").opacity(0.98))
+            }
+        }
     }
 }
 
