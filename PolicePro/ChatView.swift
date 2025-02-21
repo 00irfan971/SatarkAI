@@ -307,14 +307,12 @@ struct VoiceWaveform: View {
     }
 }
 
-// MARK: - Message Bubble
 struct MessageBubble: View {
     let message: Message
     
     var body: some View {
         HStack {
             if message.isUser { Spacer() }
-            
             Text(message.text)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 12)
@@ -346,7 +344,7 @@ struct MessageBubble: View {
     }
 }
 
-// MARK: - Chat View
+
 struct ChatView: View {
     @StateObject private var viewModel = ChatViewModel()
     @Namespace private var bottomID
@@ -462,6 +460,16 @@ struct ChatView: View {
                                         )
                                 )
                                 .foregroundColor(.white)
+                                .submitLabel(.done) // This sets the keyboard return key to "Done"
+                                .toolbar {
+                                    ToolbarItemGroup(placement: .keyboard) {
+                                        Spacer()
+                                        Button("Done") {
+                                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                                                         to: nil, from: nil, for: nil)
+                                        }
+                                    }
+                                }
                         }
                         
                         Button(action: { viewModel.toggleRecording() }) {
