@@ -433,6 +433,8 @@
 				DEVELOPMENT_TEAM = NNKQ5A4AA4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "\"We need access to your microphone for voice input.\"";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "\"We need speech recognition to convert your voice to text.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -462,6 +464,8 @@
 				DEVELOPMENT_TEAM = NNKQ5A4AA4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "\"We need access to your microphone for voice input.\"";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "\"We need speech recognition to convert your voice to text.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
